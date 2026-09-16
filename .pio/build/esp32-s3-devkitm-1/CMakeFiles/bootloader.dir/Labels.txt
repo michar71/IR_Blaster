@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+/Users/michaelhartmann/Documents/GitHub/IR_Blaster/IR_Blaster/.pio/build/esp32-s3-devkitm-1/CMakeFiles/bootloader
+/Users/michaelhartmann/Documents/GitHub/IR_Blaster/IR_Blaster/.pio/build/esp32-s3-devkitm-1/CMakeFiles/bootloader.rule
+/Users/michaelhartmann/Documents/GitHub/IR_Blaster/IR_Blaster/.pio/build/esp32-s3-devkitm-1/CMakeFiles/bootloader-complete.rule
+/Users/michaelhartmann/Documents/GitHub/IR_Blaster/IR_Blaster/.pio/build/esp32-s3-devkitm-1/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+/Users/michaelhartmann/Documents/GitHub/IR_Blaster/IR_Blaster/.pio/build/esp32-s3-devkitm-1/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+/Users/michaelhartmann/Documents/GitHub/IR_Blaster/IR_Blaster/.pio/build/esp32-s3-devkitm-1/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+/Users/michaelhartmann/Documents/GitHub/IR_Blaster/IR_Blaster/.pio/build/esp32-s3-devkitm-1/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+/Users/michaelhartmann/Documents/GitHub/IR_Blaster/IR_Blaster/.pio/build/esp32-s3-devkitm-1/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+/Users/michaelhartmann/Documents/GitHub/IR_Blaster/IR_Blaster/.pio/build/esp32-s3-devkitm-1/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+/Users/michaelhartmann/Documents/GitHub/IR_Blaster/IR_Blaster/.pio/build/esp32-s3-devkitm-1/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule

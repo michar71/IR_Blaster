@@ -1,0 +1,2 @@
+source /Users/michaelhartmann/Documents/GitHub/IR_Blaster/IR_Blaster/.pio/build/esp32-s3-devkitm-1/bootloader/gdbinit/symbols
+source /Users/michaelhartmann/Documents/GitHub/IR_Blaster/IR_Blaster/.pio/build/esp32-s3-devkitm-1/bootloader/gdbinit/connect
