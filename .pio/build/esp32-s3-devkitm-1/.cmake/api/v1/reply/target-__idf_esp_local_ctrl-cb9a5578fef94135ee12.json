@@ -260,7 +260,7 @@
 					"define" : "IDF_VER=\"5.5.0\""
 				},
 				{
-					"backtrace" : 5,
+					"backtrace" : 6,
 					"define" : "MBEDTLS_CONFIG_FILE=\"mbedtls/esp_config.h\""
 				},
 				{
@@ -511,107 +511,107 @@
 					"path" : "/Users/michaelhartmann/.platformio/packages/framework-espidf/components/lwip/port/esp32xx/include/sys"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/Users/michaelhartmann/.platformio/packages/framework-espidf/components/protocomm/include/common"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/Users/michaelhartmann/.platformio/packages/framework-espidf/components/protocomm/include/security"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/Users/michaelhartmann/.platformio/packages/framework-espidf/components/protocomm/include/transports"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/Users/michaelhartmann/.platformio/packages/framework-espidf/components/protocomm/include/crypto/srp6a"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/Users/michaelhartmann/.platformio/packages/framework-espidf/components/protocomm/proto-c"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/Users/michaelhartmann/.platformio/packages/framework-espidf/components/esp_timer/include"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/Users/michaelhartmann/.platformio/packages/framework-espidf/components/esp_wifi/include"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/Users/michaelhartmann/.platformio/packages/framework-espidf/components/esp_wifi/include/local"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/Users/michaelhartmann/.platformio/packages/framework-espidf/components/esp_wifi/wifi_apps/include"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/Users/michaelhartmann/.platformio/packages/framework-espidf/components/esp_wifi/wifi_apps/nan_app/include"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/Users/michaelhartmann/.platformio/packages/framework-espidf/components/esp_event/include"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/Users/michaelhartmann/.platformio/packages/framework-espidf/components/esp_phy/include"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/Users/michaelhartmann/.platformio/packages/framework-espidf/components/esp_phy/esp32s3/include"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/Users/michaelhartmann/.platformio/packages/framework-espidf/components/esp_netif/include"
 				},
 				{
-					"backtrace" : 5,
+					"backtrace" : 6,
 					"path" : "/Users/michaelhartmann/.platformio/packages/framework-espidf/components/esp_https_server/include"
 				},
 				{
-					"backtrace" : 5,
+					"backtrace" : 6,
 					"path" : "/Users/michaelhartmann/.platformio/packages/framework-espidf/components/esp_http_server/include"
 				},
 				{
-					"backtrace" : 5,
+					"backtrace" : 6,
 					"path" : "/Users/michaelhartmann/.platformio/packages/framework-espidf/components/http_parser"
 				},
 				{
-					"backtrace" : 5,
+					"backtrace" : 6,
 					"path" : "/Users/michaelhartmann/.platformio/packages/framework-espidf/components/esp-tls"
 				},
 				{
-					"backtrace" : 5,
+					"backtrace" : 6,
 					"path" : "/Users/michaelhartmann/.platformio/packages/framework-espidf/components/esp-tls/esp-tls-crypto"
 				},
 				{
-					"backtrace" : 5,
+					"backtrace" : 6,
 					"path" : "/Users/michaelhartmann/.platformio/packages/framework-espidf/components/mbedtls/port/include"
 				},
 				{
-					"backtrace" : 5,
+					"backtrace" : 6,
 					"path" : "/Users/michaelhartmann/.platformio/packages/framework-espidf/components/mbedtls/mbedtls/include"
 				},
 				{
-					"backtrace" : 5,
+					"backtrace" : 6,
 					"path" : "/Users/michaelhartmann/.platformio/packages/framework-espidf/components/mbedtls/mbedtls/library"
 				},
 				{
-					"backtrace" : 5,
+					"backtrace" : 6,
 					"path" : "/Users/michaelhartmann/.platformio/packages/framework-espidf/components/mbedtls/esp_crt_bundle/include"
 				},
 				{
-					"backtrace" : 5,
+					"backtrace" : 6,
 					"path" : "/Users/michaelhartmann/.platformio/packages/framework-espidf/components/mbedtls/mbedtls/3rdparty/everest/include"
 				},
 				{
-					"backtrace" : 5,
+					"backtrace" : 6,
 					"path" : "/Users/michaelhartmann/.platformio/packages/framework-espidf/components/mbedtls/mbedtls/3rdparty/p256-m"
 				},
 				{
-					"backtrace" : 5,
+					"backtrace" : 6,
 					"path" : "/Users/michaelhartmann/.platformio/packages/framework-espidf/components/mbedtls/mbedtls/3rdparty/p256-m/p256-m"
 				},
 				{
@@ -633,23 +633,23 @@
 	[
 		{
 			"backtrace" : 5,
+			"id" : "__idf_console::@4311ed8d271cc0ee1422"
+		},
+		{
+			"backtrace" : 6,
 			"id" : "__idf_esp_https_server::@a47490a9e49b7eabdb18"
 		},
 		{
-			"backtrace" : 6,
+			"backtrace" : 5,
 			"id" : "__idf_protobuf-c::@b14513c4bd859268ec22"
 		},
 		{
-			"backtrace" : 6,
+			"backtrace" : 5,
 			"id" : "__idf_protocomm::@d76d01c8dec06205e1fc"
 		},
 		{
 			"backtrace" : 2,
 			"id" : "__idf_xtensa::@1daaaad7abe597e030f9"
-		},
-		{
-			"backtrace" : 6,
-			"id" : "__idf_console::@4311ed8d271cc0ee1422"
 		}
 	],
 	"id" : "__idf_esp_local_ctrl::@d6aad58d2946e56208ef",

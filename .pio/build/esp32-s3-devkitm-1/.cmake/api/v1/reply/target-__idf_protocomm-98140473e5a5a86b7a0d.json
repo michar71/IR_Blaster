@@ -595,7 +595,7 @@
 					"path" : "/Users/michaelhartmann/.platformio/packages/framework-espidf/components/esp_netif/include"
 				},
 				{
-					"backtrace" : 5,
+					"backtrace" : 6,
 					"path" : "/Users/michaelhartmann/.platformio/packages/framework-espidf/components/protobuf-c/protobuf-c"
 				},
 				{
@@ -627,15 +627,15 @@
 					"path" : "/Users/michaelhartmann/.platformio/packages/framework-espidf/components/mbedtls/mbedtls/3rdparty/p256-m/p256-m"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/Users/michaelhartmann/.platformio/packages/framework-espidf/components/console"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/Users/michaelhartmann/.platformio/packages/framework-espidf/components/vfs/include"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/Users/michaelhartmann/.platformio/packages/framework-espidf/components/esp_vfs_console/include"
 				},
 				{
@@ -674,15 +674,15 @@
 	[
 		{
 			"backtrace" : 5,
+			"id" : "__idf_console::@4311ed8d271cc0ee1422"
+		},
+		{
+			"backtrace" : 6,
 			"id" : "__idf_protobuf-c::@b14513c4bd859268ec22"
 		},
 		{
 			"backtrace" : 2,
 			"id" : "__idf_xtensa::@1daaaad7abe597e030f9"
-		},
-		{
-			"backtrace" : 6,
-			"id" : "__idf_console::@4311ed8d271cc0ee1422"
 		}
 	],
 	"id" : "__idf_protocomm::@d76d01c8dec06205e1fc",

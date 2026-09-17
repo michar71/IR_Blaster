@@ -7,6 +7,8 @@
 #include "esp_err.h"
 #include "esp_log.h"
 #include "esp_timer.h"
+#include "nvs.h"
+#include "nvs_flash.h"
 
 #define BANK_COUNT 6
 #define BUTTON_DEBOUNCE_MS 50
@@ -21,6 +23,9 @@
 #define TEMP_SENSOR_ADDR 0x48
 #define TEMP_SENSOR_TEMP_REG 0x00
 
+#define SETTINGS_NAMESPACE "settings"
+#define ENABLED_BANK_COUNT_KEY "bank_count"
+
 static const char *TAG = "ir_blaster";
 
 static const gpio_num_t bank_pins[BANK_COUNT] = {
@@ -32,11 +37,61 @@ static const gpio_num_t bank_pins[BANK_COUNT] = {
     PIN_BANK6,
 };
 
-static void set_active_bank(int active_bank)
+static void set_enabled_bank_count(int enabled_bank_count)
 {
     for (int i = 0; i < BANK_COUNT; ++i) {
-        ESP_ERROR_CHECK(gpio_set_level(bank_pins[i], i == active_bank));
+        ESP_ERROR_CHECK(gpio_set_level(bank_pins[i], i < enabled_bank_count));
     }
+}
+
+static void init_settings_storage(void)
+{
+    esp_err_t err = nvs_flash_init();
+
+    if (err == ESP_ERR_NVS_NO_FREE_PAGES || err == ESP_ERR_NVS_NEW_VERSION_FOUND) {
+        ESP_ERROR_CHECK(nvs_flash_erase());
+        err = nvs_flash_init();
+    }
+
+    ESP_ERROR_CHECK(err);
+}
+
+static int load_enabled_bank_count(void)
+{
+    nvs_handle_t settings_handle;
+    esp_err_t err = nvs_open(SETTINGS_NAMESPACE, NVS_READONLY, &settings_handle);
+
+    if (err == ESP_ERR_NVS_NOT_FOUND) {
+        return 0;
+    }
+
+    ESP_ERROR_CHECK(err);
+
+    uint8_t enabled_bank_count = 0;
+    err = nvs_get_u8(settings_handle, ENABLED_BANK_COUNT_KEY, &enabled_bank_count);
+    nvs_close(settings_handle);
+
+    if (err == ESP_ERR_NVS_NOT_FOUND) {
+        return 0;
+    }
+
+    ESP_ERROR_CHECK(err);
+
+    if (enabled_bank_count > BANK_COUNT) {
+        return 0;
+    }
+
+    return enabled_bank_count;
+}
+
+static void save_enabled_bank_count(int enabled_bank_count)
+{
+    nvs_handle_t settings_handle;
+
+    ESP_ERROR_CHECK(nvs_open(SETTINGS_NAMESPACE, NVS_READWRITE, &settings_handle));
+    ESP_ERROR_CHECK(nvs_set_u8(settings_handle, ENABLED_BANK_COUNT_KEY, enabled_bank_count));
+    ESP_ERROR_CHECK(nvs_commit(settings_handle));
+    nvs_close(settings_handle);
 }
 
 static void init_bank_outputs(void)
@@ -56,7 +111,7 @@ static void init_bank_outputs(void)
     };
 
     ESP_ERROR_CHECK(gpio_config(&bank_config));
-    set_active_bank(-1);
+    set_enabled_bank_count(0);
 }
 
 static void init_indicator_led_outputs(void)
@@ -140,15 +195,15 @@ static esp_err_t read_temperature_c(float *temperature_c)
     return ESP_OK;
 }
 
-static void service_bank_indicator(int active_bank, int64_t now_us)
+static void service_bank_indicator(int enabled_bank_count, int64_t now_us)
 {
-    static int indicated_bank = -1;
+    static int indicated_bank_count = -1;
     static int blink_count = 0;
     static bool led_is_on = false;
     static int64_t next_change_us = 0;
 
-    if (active_bank < 0) {
-        indicated_bank = -1;
+    if (enabled_bank_count <= 0) {
+        indicated_bank_count = enabled_bank_count;
         blink_count = 0;
         led_is_on = false;
         next_change_us = 0;
@@ -156,8 +211,8 @@ static void service_bank_indicator(int active_bank, int64_t now_us)
         return;
     }
 
-    if (active_bank != indicated_bank) {
-        indicated_bank = active_bank;
+    if (enabled_bank_count != indicated_bank_count) {
+        indicated_bank_count = enabled_bank_count;
         blink_count = 0;
         led_is_on = true;
         next_change_us = now_us + (BANK_INDICATOR_BLINK_MS * 1000);
@@ -174,7 +229,7 @@ static void service_bank_indicator(int active_bank, int64_t now_us)
         ++blink_count;
         ESP_ERROR_CHECK(gpio_set_level(PIN_LED_LEFT, 0));
 
-        if (blink_count >= active_bank + 1) {
+        if (blink_count >= enabled_bank_count) {
             blink_count = 0;
             next_change_us = now_us + (BANK_INDICATOR_PAUSE_MS * 1000);
         } else {
@@ -191,19 +246,22 @@ static void service_bank_indicator(int active_bank, int64_t now_us)
 
 void app_main(void)
 {
+    init_settings_storage();
     init_bank_outputs();
     init_indicator_led_outputs();
     init_boot_button();
     init_i2c();
     test_indicator_leds();
 
-    int active_bank = -1;
+    int enabled_bank_count = load_enabled_bank_count();
+    set_enabled_bank_count(enabled_bank_count);
+
     int64_t next_temperature_read_us = esp_timer_get_time();
 
     while (true) {
         int64_t now_us = esp_timer_get_time();
 
-        service_bank_indicator(active_bank, now_us);
+        service_bank_indicator(enabled_bank_count, now_us);
 
         if (now_us >= next_temperature_read_us) {
             float temperature_c = 0.0f;
@@ -222,8 +280,9 @@ void app_main(void)
             vTaskDelay(pdMS_TO_TICKS(BUTTON_DEBOUNCE_MS));
 
             if (gpio_get_level(PIN_BOOT_BUTTON) == 0) {
-                active_bank = (active_bank + 1) % BANK_COUNT;
-                set_active_bank(active_bank);
+                enabled_bank_count = (enabled_bank_count + 1) % (BANK_COUNT + 1);
+                set_enabled_bank_count(enabled_bank_count);
+                save_enabled_bank_count(enabled_bank_count);
 
                 while (gpio_get_level(PIN_BOOT_BUTTON) == 0) {
                     vTaskDelay(pdMS_TO_TICKS(BUTTON_POLL_MS));

@@ -2240,7 +2240,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "IR_Blaster.elf::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-IR_Blaster.elf-362444c7a8f9091f9487.json",
+					"jsonFile" : "target-IR_Blaster.elf-57fb324605213f152ef0.json",
 					"name" : "IR_Blaster.elf",
 					"projectIndex" : 0
 				},
@@ -2275,7 +2275,7 @@
 				{
 					"directoryIndex" : 65,
 					"id" : "__idf_cmock::@38f9eb59693b7394f54c",
-					"jsonFile" : "target-__idf_cmock-c7e03a65b4a8037c557b.json",
+					"jsonFile" : "target-__idf_cmock-d1e232a745747a1b3a6e.json",
 					"name" : "__idf_cmock",
 					"projectIndex" : 1
 				},
@@ -2324,7 +2324,7 @@
 				{
 					"directoryIndex" : 17,
 					"id" : "__idf_esp_app_format::@08c2bdce7fd85cdbea06",
-					"jsonFile" : "target-__idf_esp_app_format-97d8a4a1782910116e55.json",
+					"jsonFile" : "target-__idf_esp_app_format-acfccc3bd80193a3f0c5.json",
 					"name" : "__idf_esp_app_format",
 					"projectIndex" : 1
 				},
@@ -2548,7 +2548,7 @@
 				{
 					"directoryIndex" : 104,
 					"id" : "__idf_esp_local_ctrl::@d6aad58d2946e56208ef",
-					"jsonFile" : "target-__idf_esp_local_ctrl-53bef94fc0a10cea5f86.json",
+					"jsonFile" : "target-__idf_esp_local_ctrl-cb9a5578fef94135ee12.json",
 					"name" : "__idf_esp_local_ctrl",
 					"projectIndex" : 1
 				},
@@ -2751,7 +2751,7 @@
 				{
 					"directoryIndex" : 103,
 					"id" : "__idf_protocomm::@d76d01c8dec06205e1fc",
-					"jsonFile" : "target-__idf_protocomm-eaefc614cb96478bddc5.json",
+					"jsonFile" : "target-__idf_protocomm-98140473e5a5a86b7a0d.json",
 					"name" : "__idf_protocomm",
 					"projectIndex" : 1
 				},
@@ -2849,7 +2849,7 @@
 				{
 					"directoryIndex" : 120,
 					"id" : "__idf_wifi_provisioning::@9d7e7ffe1b15746c1098",
-					"jsonFile" : "target-__idf_wifi_provisioning-f469df33c4b782aede8e.json",
+					"jsonFile" : "target-__idf_wifi_provisioning-63002e277bb107f25ae9.json",
 					"name" : "__idf_wifi_provisioning",
 					"projectIndex" : 1
 				},
@@ -2870,7 +2870,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "__ldgen_output_sections.ld::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-__ldgen_output_sections.ld-7b2ecc58003a9c2ff91c.json",
+					"jsonFile" : "target-__ldgen_output_sections.ld-c9a6bf2b399bb652b70d.json",
 					"name" : "__ldgen_output_sections.ld",
 					"projectIndex" : 0
 				},

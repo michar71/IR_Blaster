@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "IR_Blaster",
-    "project_version":    "1",
+    "project_version":    "10fedfb-dirty",
     "project_path":       "/Users/michaelhartmann/Documents/GitHub/IR_Blaster/IR_Blaster",
     "idf_path":           "/Users/michaelhartmann/.platformio/packages/framework-espidf",
     "build_dir":          "/Users/michaelhartmann/Documents/GitHub/IR_Blaster/IR_Blaster/.pio/build/esp32-s3-devkitm-1",
